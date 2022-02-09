@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  node:
+    build: ./docker/node
+    container_name: ${APP_NAME}_node
+    ports:
+      - ${HTTP_PORT}:4200
+    volumes:
+      - ./code:/opt/app
+    command: tail -f /dev/null
